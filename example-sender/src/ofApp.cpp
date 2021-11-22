@@ -50,7 +50,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-
+#if not defined(TARGET_OSX)
 	strcpy_s(senderName, 256, "Openframeworks NDI Sender"); // Set the sender name
 	ofSetWindowTitle(senderName); // show it on the title bar
 
@@ -59,6 +59,7 @@ void ofApp::setup(){
 	#else // _WIN64
 	cout << "\nofxNDI example sender - 32 bit" << endl;
 	#endif // _WIN64
+#endif
 
 	cout << ndiSender.GetNDIversion() << " (https://www.ndi.tv/)" << endl;
 
